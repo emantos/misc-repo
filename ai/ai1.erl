@@ -1,5 +1,5 @@
 - module(ai1).
-- export([sense/5, move/2]).
+- export([sense/5, shiftToPosition/2, move/2, move/5, move2/5]).
 
 sense(P, Z, W, Hit, Miss) -> 
 	RawP = 
@@ -21,3 +21,14 @@ move(P, Dir) ->
 	SplitPosition = (length(P) - Dir) rem length(P),
 	{A, B} = lists:split(SplitPosition, P),
 	B ++ A.
+
+move(P, Dir, PHit, PUndershoot, POvershoot) ->
+	{NewList, _} = 
+		lists:mapfoldl(
+			fun (_,[X,Y,Z | T]) -> 
+				{(X * POvershoot) + (Y * PHit) + (Z * PUndershoot),
+				  move([X,Y,Z] ++ T, -1)}
+			end,
+			move(P, Dir + 1),
+			P),
+	NewList.
