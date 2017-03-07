@@ -21,3 +21,8 @@ move(P, Dir) ->
 	SplitPosition = (length(P) - Dir) rem length(P),
 	{A, B} = lists:split(SplitPosition, P),
 	B ++ A.
+
+mod(X, L) when X < 0 ->  L - X;
+mod(0, L) -> L;
+mod(X, L) -> X rem L.
+
