@@ -39,7 +39,6 @@ sense(P, Colors, Observation, P_SensorRight) ->
 		lists:seq(1, length(P))),
 	[[ (X/TotalP) || X <- Y] || Y <- UnNormalized].
 
-
 calcSensorProbability(P, Colors, Observation, P_SensorRight, Col, Row) ->
 	Posterior = lists:nth(Col, lists:nth(Row, P)),
 	Color = lists:nth(Col, lists:nth(Row, Colors)),
@@ -48,6 +47,12 @@ calcSensorProbability(P, Colors, Observation, P_SensorRight, Col, Row) ->
 		true -> 
 	  		Posterior * (1 - P_SensorRight)
 	end.
+
+%pdateSensePosterior(Posterior, Color, Observation, P_SensorRight) when Color == Observation ->
+%Posterior * P_SensorRight;
+
+%pdateSensePosterior(Posterior, Color, Observation, P_SensorRight) -> 
+%Posterior * (1 - P_SensorRight).
 
 localize(Colors, Measurements, Motions, P_SensorRight, P_ExactMove) ->
 	[H | _] = Colors,
