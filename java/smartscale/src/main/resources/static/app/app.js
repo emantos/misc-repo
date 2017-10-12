@@ -1,4 +1,4 @@
-var mainApp = angular.module('mainApp', [ 'ui.router', 'ui.bootstrap', 'main.controller']);
+var mainApp = angular.module('mainApp', ['ui.router', 'ui.bootstrap', 'main.controller', 'nvd3']);
 
 mainApp.config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
