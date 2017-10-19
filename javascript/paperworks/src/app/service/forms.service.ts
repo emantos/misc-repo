@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+
 import { Form } from '../model/form';
 import { Agency } from '../model/agency';
 
@@ -41,7 +45,7 @@ const FORMS : Form[] = [
 @Injectable()
 export class FormsService {
 
-  constructor() {}
+  constructor(private http: Http) {}
 
   getAgencies() : Promise<Agency[]> {
     return Promise.resolve(AGENCIES);
@@ -57,6 +61,14 @@ export class FormsService {
   }
 
   getForms() : Promise<Form[]> {
-    return Promise.resolve(FORMS);
+    return this.http.get('/rest/doc')
+             .toPromise()
+             .then(response => response.json() as Form[])
+             .catch(this.handleError);
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
   }
 }

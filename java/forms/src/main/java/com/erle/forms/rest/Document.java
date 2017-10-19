@@ -24,7 +24,7 @@ public class Document {
 	@RequestMapping(method = RequestMethod.GET)
 	public Collection<Form> getForms() {
 		return forms;
-	}
+	}	
 
 	private Collection<Form> getFormsFromResource() {
 		try {

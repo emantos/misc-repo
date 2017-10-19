@@ -1,12 +1,12 @@
 <!-- Page Heading/Breadcrumbs -->
-<div class="row vertical-align">
+<div *ngIf="agency" class="row vertical-align">
   <div class="col-md-8">
     <h1 class="mt-4 mb-3">{{ agency.name }}
       <small>{{ agency.subgroup }}</small>
     </h1>
   </div>
   <div class="col-md-4">
-    <input type="text" class="form-control" placeholder="Search">
+    <input (keyup)="onKey($event)" [(ngModel)]="filter" class="form-control" placeholder="Search">
   </div>
 </div>
 
@@ -14,11 +14,11 @@
   <li class="breadcrumb-item">
     <a href="index.html">Home</a>
   </li>
-  <li class="breadcrumb-item active">{{ agency.name }}</li>
-  <li class="breadcrumb-item active">{{ agency.subgroup }}</li>
+  <li *ngIf="agency" class="breadcrumb-item active">{{ agency.name }}</li>
+  <li *ngIf="agency" class="breadcrumb-item active">{{ agency.subgroup }}</li>
 </ol>
 
-<app-form *ngFor="let form of forms" [form]="form"></app-form>
+<app-form *ngFor="let form of filteredForms" [form]="form"></app-form>
 
 <!-- Pagination -->
 <ul class="pagination justify-content-center">

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { Agency } from './model/agency'
 import { FormsService } from './service/forms.service';
 
@@ -10,7 +10,6 @@ import { FormsService } from './service/forms.service';
 })
 
 export class AppComponent {
-  title = 'app';
   agencies: Agency[];
   selectedAgency: Agency;
 

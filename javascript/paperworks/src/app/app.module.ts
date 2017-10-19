@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule }   from '@angular/router';
+import { HttpModule }    from '@angular/http';
+import { FormsModule }   from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ListFormsComponent } from './list-forms/list-forms.component';
@@ -16,21 +19,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'agency/:agencyName/:subgroup',
-        component: ListFormsComponent
-      }
-    ])
+    HttpModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
