@@ -1,12 +1,15 @@
 package com.erle.forms.rest.model;
 
+import java.util.List;
+
 public class Form {
 	private String agency;
-	private String classification;
+	private List<String> classification;
 	private String description;
 	private String documentNumber;
 	private String downloadableLink;
 	private String fillableLink;
+	private String version;
 
 	public String getAgency() {
 		return agency;
@@ -16,11 +19,11 @@ public class Form {
 		this.agency = agency;
 	}
 
-	public String getClassification() {
+	public List<String> getClassification() {
 		return classification;
 	}
 
-	public void setClassification(String classification) {
+	public void setClassification(List<String> classification) {
 		this.classification = classification;
 	}
 
@@ -56,4 +59,11 @@ public class Form {
 		this.fillableLink = fillableLink;
 	}
 
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
 }

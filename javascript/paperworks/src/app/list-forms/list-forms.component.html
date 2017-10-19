@@ -1,0 +1,46 @@
+<!-- Page Heading/Breadcrumbs -->
+<div class="row vertical-align">
+  <div class="col-md-8">
+    <h1 class="mt-4 mb-3">{{ agency.name }}
+      <small>{{ agency.subgroup }}</small>
+    </h1>
+  </div>
+  <div class="col-md-4">
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="index.html">Home</a>
+  </li>
+  <li class="breadcrumb-item active">{{ agency.name }}</li>
+  <li class="breadcrumb-item active">{{ agency.subgroup }}</li>
+</ol>
+
+<app-form *ngFor="let form of forms" [form]="form"></app-form>
+
+<!-- Pagination -->
+<ul class="pagination justify-content-center">
+  <li class="page-item">
+    <a class="page-link" href="#" aria-label="Previous">
+      <span aria-hidden="true">&laquo;</span>
+      <span class="sr-only">Previous</span>
+    </a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="#">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="#">2</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="#">3</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="#" aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+      <span class="sr-only">Next</span>
+    </a>
+  </li>
+</ul>

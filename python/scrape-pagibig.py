@@ -30,7 +30,7 @@ for row in soup.find_all('tr'):
                     if hasattr(sibling, 'a') and sibling.a != None:
                         docu['downloadableLink'] = sibling.a['href']
             docu['agency'] = 'PAG-IBIG'
-            docu['classification'] = 'Housing Related Forms : ' + currentClassification
+            docu['classification'] = ['Housing Related Forms', currentClassification]
             docus.append(docu)
 
 print(json.dumps(docus, sort_keys=True, indent=4))
