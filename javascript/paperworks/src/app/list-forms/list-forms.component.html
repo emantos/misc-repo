@@ -1,9 +1,9 @@
 <!-- Page Heading/Breadcrumbs -->
 <div *ngIf="agency" class="row vertical-align">
   <div class="col-md-8">
-    <h1 class="mt-4 mb-3">{{ agency.name }}
-      <small>{{ agency.subgroup }}</small>
-    </h1>
+    <h2 class="mt-4 mb-3">{{ agency.name }}
+      <small class="text-muted">{{ agency.subgroup }} <span class="badge badge-pill badge-info">{{ filteredForms.length }} result(s)</span></small>
+    </h2>
   </div>
   <div class="col-md-4">
     <input (keyup)="onKey($event)" [(ngModel)]="filter" class="form-control" placeholder="Search">
@@ -21,7 +21,7 @@
 <app-form *ngFor="let form of filteredForms" [form]="form"></app-form>
 
 <!-- Pagination -->
-<ul class="pagination justify-content-center">
+<ul class="pagination justify-content-center pb-2">
   <li class="page-item">
     <a class="page-link" href="#" aria-label="Previous">
       <span aria-hidden="true">&laquo;</span>

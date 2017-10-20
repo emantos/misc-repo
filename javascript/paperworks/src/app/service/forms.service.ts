@@ -12,36 +12,6 @@ const AGENCIES: Agency[] = [
   { name: 'PAG-IBIG', subgroup: 'Other Forms', subgroupEncoded: encodeURI('Other Forms') }
 ];
 
-const FORMS : Form[] = [
-	{
-    "agency": "PAG-IBIG",
-    "classification": ["Housing Related Forms", "Housing Loan Availment"],
-    "description": "Checklist of Requirements for Pag-IBIG Housing Loan (For Window 1 Accounts)",
-    "documentNumber": "HQP-HLF-065",
-    "downloadableLink": "DLForms/housingrelated/HLF065_ChecklistOfRequirements_Window1_V04.pdf",
-    "fillableLink": "",
-    "version": "V04"
-  },
-  {
-    "agency": "PAG-IBIG",
-    "classification": ["Housing Related Forms", "Housing Loan Availment"],
-    "description": "Checklist of  Requirements for Pag-IBIG Housing Loan (For Window 2 Accounts)",
-    "documentNumber": "HQP-HLF-066",
-    "downloadableLink": "DLForms/housingrelated/HLF066_ChecklistOfRequirements_HL_Window2_V03.pdf",
-    "fillableLink": "",
-    "version": "V03"
-  },
-  {
-    "agency": "PAG-IBIG",
-    "classification": ["Housing Related Forms", "Housing Loan Availment"],
-    "description": " Checklist of  Requirements For Pag-IBIG Housing Loan Under Retail Accounts (Construction of  House/Home Improvement)",
-    "documentNumber": "HQP-HLF-368",
-    "downloadableLink": "DLForms/housingrelated/HLF368_ChecklistOfRequirementsForPag-IBIGHousingLoanUnderRetailAccounts_....pdf",
-    "fillableLink": "",
-    "version": "V01"
-  }
-];
-
 @Injectable()
 export class FormsService {
 
